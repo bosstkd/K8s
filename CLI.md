@@ -83,3 +83,16 @@ To edit the image that we uses we can do it from the deployment:
     ## Other commands:
     - to run a secret file:
     - > kubectl applu -f mongo-secret.yml  ===> we have to do it before running mongo-deployment because we need the secret configuration.
+
+    ## Namespaces 
+    - some method to generate a virtual cluster inside k8s cluster
+    - by default k8s offers a namespace default
+    - to see all namespaces: -> kubectl get namespaces
+    - to create namespace: -> kubectl create namespace < name-space >
+    - the usecase is to make order, for example a namespace for database another for api-x ... etc
+    - to create something into the defined namespace we can do something like:
+    - > kubectl apply -f my-file.yml --namespace=my-namespace
+    - > we can do it also into the file configuration it self into metadata: ... namespace: my-namespace
+
+    ## to install ingress controller in minikube run:
+    - minikube addons enable ingress

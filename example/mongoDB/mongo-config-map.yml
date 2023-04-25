@@ -4,4 +4,6 @@ metadata:
   name: mongodb-configmap
 data:
   # server ip address is the name of the service
+  # to use the configuration from a namespace we have to add .namespace example:
+  # database_url: mongo-service.my-namespace
   database_url: mongo-service
